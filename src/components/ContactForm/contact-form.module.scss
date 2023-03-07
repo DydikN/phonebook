@@ -1,0 +1,28 @@
+.container {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.input {
+  margin-bottom: 20px;
+}
+
+.btnSubmit {
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnSubmit:hover,
+.btnSubmit:focus {
+  background-color: rgb(41, 190, 41);
+}
