@@ -1,6 +1,6 @@
 const inititalState = {
   name: '',
-  phone: '',
+  number: '',
 };
 
 export default inititalState;

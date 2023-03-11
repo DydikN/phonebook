@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -9,18 +12,41 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import Notiflix from 'notiflix';
+
+import { useAuth } from '../../components/hooks/useAuth';
+
+import { logIn } from 'redux/auth/auth-operations';
+
 const theme = createTheme();
 
 const RegisterPage = () => {
+  const dispatch = useDispatch();
+  const { isLoggedIn } = useAuth();
+
   const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      name: data.get('name'),
+
+    const allData = {
       email: data.get('email'),
       password: data.get('password'),
-    });
+    };
+
+    if (data.get('email').trim() === '' && data.get('password')) {
+      return Notiflix.Notify.failure(`Please fill out form`);
+    }
+
+    dispatch(logIn(allData));
+
+    data.set('name', '');
+    data.set('email', '');
+    data.set('password', '');
   };
+
+  if (isLoggedIn) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -50,7 +76,6 @@ const RegisterPage = () => {
               margin="normal"
               required
               fullWidth
-              id="email"
               label="Email Address"
               name="email"
               autoComplete="email"
@@ -63,7 +88,6 @@ const RegisterPage = () => {
               name="password"
               label="Password"
               type="password"
-              id="password"
               autoComplete="current-password"
             />
             <Button

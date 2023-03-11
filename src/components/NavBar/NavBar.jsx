@@ -8,10 +8,13 @@ import Toolbar from '@mui/material/Toolbar';
 
 import NavBarAuth from './NavBarAuth/NavBarAuth';
 import NavBarUser from './NavBarUser/NavBarUser';
+import { useAuth } from 'components/hooks/useAuth';
 
 import styles from './nav-bar.module.scss';
 
 const NavBar = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <div>
       <header className={styles.header}>
@@ -33,10 +36,19 @@ const NavBar = () => {
                   >
                     Home
                   </NavLink>
+                  {isLoggedIn && (
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? styles.link__current : styles.link
+                      }
+                      to="/contacts"
+                    >
+                      Contacts
+                    </NavLink>
+                  )}
                 </div>
               </Box>
-              <NavBarUser />
-              <NavBarAuth />
+              {isLoggedIn ? <NavBarUser /> : <NavBarAuth />}
             </Toolbar>
           </AppBar>
         </Box>

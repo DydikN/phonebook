@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -9,18 +12,40 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import Notiflix from 'notiflix';
+
+import { useAuth } from '../../components/hooks/useAuth';
+
+import { signUp } from 'redux/auth/auth-operations';
+
 const theme = createTheme();
 
 const RegisterPage = () => {
+  const dispatch = useDispatch();
+  const { isLoggedIn } = useAuth();
+
   const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      name: data.get('name'),
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+
+    const allData = {
+      name: data.get('name').trim(),
+      email: data.get('email').trim(),
+      password: data.get('password').trim(),
+    };
+
+    console.log(allData === '');
+
+    if (allData) {
+      return Notiflix.Notify.failure(`Please fill out form`);
+    }
+
+    dispatch(signUp(allData));
   };
+
+  if (isLoggedIn) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <ThemeProvider theme={theme}>

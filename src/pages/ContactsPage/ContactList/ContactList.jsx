@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from '../../../redux/contacts/contacts-operations';
 
-import { getVisibleContacts } from 'redux/selectors';
+import { getVisibleContacts } from '../../../redux/contacts/contacts-selectors';
 import styles from './contact-list.module.scss';
 
 const ContactList = () => {
@@ -17,10 +17,10 @@ const ContactList = () => {
   return (
     <>
       <ul className={styles.list}>
-        {arrayContacts.map(({ id, name, phone }) => (
+        {arrayContacts.map(({ id, name, number }) => (
           <li className={styles.item} key={id}>
             <p className={styles.text}>
-              {name}: {phone}
+              {name}: {number}
             </p>
             <button
               className={styles.button}
