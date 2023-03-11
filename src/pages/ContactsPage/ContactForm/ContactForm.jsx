@@ -3,12 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import Notiflix from 'notiflix';
 import * as React from 'react';
 
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
 
 import styles from './contact-form.module.scss';
 import inititalState from './initialState';
@@ -96,6 +93,7 @@ function ContactForm() {
           type="tel"
         />
         <Button
+          className={styles.btnSubmit}
           type="submit"
           fullWidth
           variant="contained"
@@ -105,38 +103,6 @@ function ContactForm() {
         </Button>
       </Box>
     </Box>
-    // <form className={styles.container} onSubmit={handleSubmit}>
-    //   <label>
-    //     <p className={styles.title}>Name</p>
-    //     <input
-    //       className={styles.input}
-    // type="text"
-    //       name="name"
-    //       pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-    //       onChange={handleChange}
-    //       value={name}
-    //       title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-    //       placeholder="Surname Name"
-    //       required
-    //     />
-    //   </label>
-    //   <label>
-    //     <p className={styles.title}>Number</p>
-    //     <input
-    //       className={styles.input}
-    //       type="tel"
-    //       name="phone"
-    //       onChange={handleChange}
-    //       value={phone}
-    //       pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-    //       title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-    //       required
-    //     />
-    //   </label>
-    //   <button className={styles.btnSubmit} type="submit">
-    //     Add contact
-    //   </button>
-    // </form>
   );
 }
 
