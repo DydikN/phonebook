@@ -14,15 +14,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Notiflix from 'notiflix';
 
-import { useAuth } from '../../components/hooks/useAuth';
-
 import { logIn } from 'redux/auth/auth-operations';
 
 const theme = createTheme();
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
-  const { isLoggedIn } = useAuth();
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -33,20 +30,14 @@ const RegisterPage = () => {
       password: data.get('password'),
     };
 
-    if (data.get('email').trim() === '' && data.get('password')) {
+    if (data.get('email').trim() === '' && data.get('password').trim() === '') {
       return Notiflix.Notify.failure(`Please fill out form`);
     }
 
     dispatch(logIn(allData));
 
-    data.set('name', '');
-    data.set('email', '');
-    data.set('password', '');
+    console.log(data.set('email', 'papap'));
   };
-
-  if (isLoggedIn) {
-    return <Navigate to="/" />;
-  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -77,6 +68,7 @@ const RegisterPage = () => {
               required
               fullWidth
               label="Email Address"
+              id="email"
               name="email"
               autoComplete="email"
               autoFocus

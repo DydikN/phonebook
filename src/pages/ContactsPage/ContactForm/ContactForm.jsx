@@ -60,48 +60,39 @@ function ContactForm() {
   const { name, number } = state;
 
   return (
-    <Box
-      sx={{
-        marginTop: 8,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
-      <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          onChange={handleChange}
-          value={name}
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          type="text"
-          label="Name"
-          name="name"
-          autoFocus
-        />
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          onChange={handleChange}
-          value={number}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          name="number"
-          label="number"
-          type="tel"
-        />
-        <Button
-          className={styles.btnSubmit}
-          type="submit"
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2, backgroundColor: 'rgb(39, 61, 164)' }}
-        >
-          Add contact
-        </Button>
-      </Box>
+    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+      <TextField
+        margin="normal"
+        required
+        fullWidth
+        onChange={handleChange}
+        value={name}
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+        type="text"
+        label="Name"
+        name="name"
+        autoFocus
+      />
+      <TextField
+        margin="normal"
+        required
+        fullWidth
+        onChange={handleChange}
+        value={number}
+        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+        name="number"
+        label="number"
+        type="tel"
+      />
+      <Button
+        className={styles.btnSubmit}
+        type="submit"
+        fullWidth
+        variant="contained"
+        sx={{ mt: 3, mb: 2, backgroundColor: 'rgb(39, 61, 164)' }}
+      >
+        Add contact
+      </Button>
     </Box>
   );
 }

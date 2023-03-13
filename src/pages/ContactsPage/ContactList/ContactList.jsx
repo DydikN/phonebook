@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Button } from '@mui/material';
 
 import { deleteContact } from '../../../redux/contacts/contacts-operations';
 
@@ -22,13 +23,23 @@ const ContactList = () => {
             <p className={styles.text}>
               {name}: {number}
             </p>
-            <button
+            <Button
+              className={styles.button}
+              type="button"
+              variant="contained"
+              onClick={() => deleteContactById(id)}
+              sx={{ mt: 3, mb: 2, backgroundColor: 'rgb(39, 61, 164)' }}
+            >
+              Delete
+            </Button>
+
+            {/* <button
               className={styles.button}
               type="button"
               onClick={() => deleteContactById(id)}
             >
               Delete
-            </button>
+            </button> */}
           </li>
         ))}
       </ul>

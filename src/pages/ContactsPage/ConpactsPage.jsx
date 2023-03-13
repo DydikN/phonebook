@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import Box from '@mui/material/Box';
 
 import ContactForm from '../ContactsPage/ContactForm/ContactForm';
 import Filter from '../ContactsPage/Filter/Filter';
@@ -18,7 +19,14 @@ const ContactsPage = () => {
   const isContacts = Boolean(useSelector(getVisibleContacts).length);
 
   return (
-    <>
+    <Box
+      sx={{
+        marginTop: 8,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
       <h1>Phonebook</h1>
       <ContactForm />
       <div>
@@ -29,7 +37,7 @@ const ContactsPage = () => {
 
         {isContacts ? <ContactList /> : <p>No contacts</p>}
       </div>
-    </>
+    </Box>
   );
 };
 

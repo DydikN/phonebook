@@ -12,19 +12,19 @@
 }
 
 .text {
-  margin-right: 10px;
+  font-size: medium;
+  font-weight: bold;
 }
 
 .button {
   display: block;
-  border: 1px solid black;
+  border: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .button:hover,
 .button:focus {
-  color: white;
+  color: black;
   background-color: red;
 }

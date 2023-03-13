@@ -32,45 +32,35 @@ const authSlice = createSlice({
     builder
       .addCase(signUp.pending, handlePending)
       .addCase(signUp.fulfilled, (state, { payload }) => {
-        return (state = {
-          ...state,
-          loading: false,
-          user: payload.user,
-          token: payload.token,
-          isLoggedIn: true,
-        });
+        const { user, token } = payload;
+        state.isLoading = false;
+        state.user = user;
+        state.token = token;
+        state.isLoggedIn = true;
       })
       .addCase(signUp.rejected, handleReject)
       .addCase(logIn.pending, handlePending)
       .addCase(logIn.fulfilled, (state, { payload }) => {
-        return (state = {
-          ...state,
-          loading: false,
-          user: payload.user,
-          token: payload.token,
-          isLoggedIn: true,
-        });
+        const { user, token } = payload;
+        state.isLoading = false;
+        state.user = user;
+        state.token = token;
+        state.isLoggedIn = true;
       })
       .addCase(logIn.rejected, handleReject)
       .addCase(current.pending, handlePending)
       .addCase(current.fulfilled, (state, { payload }) => {
-        return (state = {
-          ...state,
-          user: payload,
-          loading: false,
-          isLoggedIn: true,
-        });
+        state.isLoading = false;
+        state.user = payload;
+        state.isLoggedIn = true;
       })
       .addCase(current.rejected, handleReject)
       .addCase(logOut.pending, handlePending)
-      .addCase(logOut.fulfilled, (state, _) => {
-        return (state = {
-          ...state,
-          user: {},
-          token: '',
-          loading: false,
-          isLoggedIn: false,
-        });
+      .addCase(logOut.fulfilled, state => {
+        state.isLoading = false;
+        state.user = {};
+        state.token = '';
+        state.isLoggedIn = false;
       })
       .addCase(logOut.rejected, handleReject);
   },

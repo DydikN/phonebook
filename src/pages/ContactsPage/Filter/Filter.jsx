@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { TextField } from '@mui/material';
 
 import { setFilter } from '../../../redux/filter/filter-slice';
 import { getFilter } from '../../../redux/filter/filter-selectors';
@@ -15,12 +16,14 @@ const Filter = () => {
   return (
     <>
       <p>Find contacts by name</p>
-      <input
-        type="text"
-        name="filter"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+
+      <TextField
+        margin="normal"
+        size="small"
         onChange={changeFilter}
         value={filter}
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+        type="text"
       />
     </>
   );
