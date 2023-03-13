@@ -32,10 +32,8 @@ const RegisterPage = () => {
     if (data.get('email').trim() === '' && data.get('password').trim() === '') {
       return Notiflix.Notify.failure(`Please fill out form`);
     }
-
     dispatch(logIn(allData));
-
-    console.log(data.set('email', 'papap'));
+    document.getElementById('form').reset();
   };
 
   return (
@@ -58,6 +56,7 @@ const RegisterPage = () => {
           </Typography>
           <Box
             component="form"
+            id="form"
             onSubmit={handleSubmit}
             noValidate
             sx={{ mt: 1 }}
@@ -67,7 +66,6 @@ const RegisterPage = () => {
               required
               fullWidth
               label="Email Address"
-              id="email"
               name="email"
               autoComplete="email"
               autoFocus

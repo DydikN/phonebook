@@ -35,6 +35,7 @@ const RegisterPage = () => {
     }
 
     dispatch(signUp(allData));
+    document.getElementById('form').reset();
   };
 
   return (
@@ -57,6 +58,7 @@ const RegisterPage = () => {
           </Typography>
           <Box
             component="form"
+            id="form"
             onSubmit={handleSubmit}
             noValidate
             sx={{ mt: 1 }}
