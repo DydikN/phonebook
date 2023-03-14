@@ -12,9 +12,9 @@ export const signUp = createAsyncThunk(
 
       return result;
     } catch (error) {
-      const message = thunkAPI.rejectWithValue(error);
+      thunkAPI.rejectWithValue(error);
 
-      return Notiflix.Notify.failure(message.payload);
+      return Notiflix.Notify.failure('Something is wrong');
     }
   }
 );

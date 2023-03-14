@@ -30,9 +30,9 @@ const RegisterPage = () => {
       password: data.get('password').trim(),
     };
 
-    if (allData) {
-      return Notiflix.Notify.failure(`Please fill out form`);
-    }
+    // if (allData) {
+    //   return Notiflix.Notify.failure(`Please fill out form`);
+    // }
 
     dispatch(signUp(allData));
     document.getElementById('form').reset();
