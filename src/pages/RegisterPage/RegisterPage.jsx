@@ -11,8 +11,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import Notiflix from 'notiflix';
-
 import { signUp } from 'redux/auth/auth-operations';
 
 const theme = createTheme();
@@ -29,10 +27,6 @@ const RegisterPage = () => {
       email: data.get('email').trim(),
       password: data.get('password').trim(),
     };
-
-    // if (allData) {
-    //   return Notiflix.Notify.failure(`Please fill out form`);
-    // }
 
     dispatch(signUp(allData));
     document.getElementById('form').reset();
