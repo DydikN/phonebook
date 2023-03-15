@@ -28,14 +28,17 @@ const NavBar = () => {
                 sx={{ flexGrow: 1, display: { sm: 'block' } }}
               >
                 <div className={styles.item}>
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? styles.link__current : styles.link
-                    }
-                    to="/"
-                  >
-                    Home
-                  </NavLink>
+                  {!isLoggedIn && (
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? styles.link__current : styles.link
+                      }
+                      to="/"
+                    >
+                      Home
+                    </NavLink>
+                  )}
+
                   {isLoggedIn && (
                     <NavLink
                       className={({ isActive }) =>
