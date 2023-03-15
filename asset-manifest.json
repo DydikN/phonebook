@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.fd8c078e.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.3468acdb.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.8c131cfe.js",
     "static/css/22.e83f3f2e.chunk.css": "/goit-react-hw-08-phonebook/static/css/22.e83f3f2e.chunk.css",
-    "static/js/22.9d87b3de.chunk.js": "/goit-react-hw-08-phonebook/static/js/22.9d87b3de.chunk.js",
+    "static/js/22.30b2d44e.chunk.js": "/goit-react-hw-08-phonebook/static/js/22.30b2d44e.chunk.js",
     "static/css/961.d7e50934.chunk.css": "/goit-react-hw-08-phonebook/static/css/961.d7e50934.chunk.css",
     "static/js/961.451b8aac.chunk.js": "/goit-react-hw-08-phonebook/static/js/961.451b8aac.chunk.js",
     "static/js/589.116be4ac.chunk.js": "/goit-react-hw-08-phonebook/static/js/589.116be4ac.chunk.js",
@@ -16,9 +16,9 @@
     "static/js/857.f93a1092.chunk.js": "/goit-react-hw-08-phonebook/static/js/857.f93a1092.chunk.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.fd8c078e.css.map": "/goit-react-hw-08-phonebook/static/css/main.fd8c078e.css.map",
-    "main.3468acdb.js.map": "/goit-react-hw-08-phonebook/static/js/main.3468acdb.js.map",
+    "main.8c131cfe.js.map": "/goit-react-hw-08-phonebook/static/js/main.8c131cfe.js.map",
     "22.e83f3f2e.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/22.e83f3f2e.chunk.css.map",
-    "22.9d87b3de.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/22.9d87b3de.chunk.js.map",
+    "22.30b2d44e.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/22.30b2d44e.chunk.js.map",
     "961.d7e50934.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/961.d7e50934.chunk.css.map",
     "961.451b8aac.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/961.451b8aac.chunk.js.map",
     "589.116be4ac.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/589.116be4ac.chunk.js.map",
@@ -32,6 +32,6 @@
   },
   "entrypoints": [
     "static/css/main.fd8c078e.css",
-    "static/js/main.3468acdb.js"
+    "static/js/main.8c131cfe.js"
   ]
 }
